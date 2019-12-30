@@ -1,6 +1,6 @@
 from aged_brie import Aged_brie
 
 
-def update_quality_Aged_brie():
-    assert ("pato", 2, 0) == Aged_brie.update_quality("pato", 1, 1)
-    assert ("pato", 0, 2) == Aged_brie.update_quality("pato", -1, 4)
+def test_update_quality_Aged_brie():
+    assert 2 == Aged_brie("pato", 1, 1).update_quality
+    assert 6 == Aged_brie.("pato", -1, 4).update_quality
