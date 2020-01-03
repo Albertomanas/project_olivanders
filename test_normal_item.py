@@ -1,5 +1,7 @@
 from normal_item import Normal_item
 
 
-def update_quality_normal_item():
-    assert (pato, 1, 1) == Normal_item.update_quality(pato, 2, 2)
+def test_update_quality_normal_item():
+    pato = Normal_item("pato", 2, 2)
+    pato.update_quality()
+    assert pato.get_quality() == 1
