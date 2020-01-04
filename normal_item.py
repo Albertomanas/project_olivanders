@@ -1,24 +1,25 @@
 class Normal_item():
 
-    def __init__(self, name, sell_in=1, quality=1):
+    def __init__(self, name, sell_in, quality):
         self.name = name
         self.sell_in = sell_in
         self.quality = quality
+        # Velocidad a la cual cambian las propiedades de Normal_item en un dia
         self.quality_speed = -1
         self.sell_in_speed = -1
 
     def __repr__(self):
         return "name:%s, sell_in:%s, quality:%s" % (self.name, self.sell_in, self.quality)
 
-    # def checksellinspeed i quality speed()
+    # Propiedades básicas de quality y sell_in
 
     def update_quality(self):
-        self.quality -= 1
+        self.quality += self.quality_speed
 
     def update_sell_in(self):
-        self.sell_in -= 1
+        self.sell_in += self.sell_in_speed
 
-    # funciones para casos test
+    # Funciones para poder comprobar datos en los casos test
 
     def get_quality(self):
         return self.quality
@@ -26,7 +27,15 @@ class Normal_item():
     def get_sell_in(self):
         return self.sell_in
 
-    # def general para cambiar todo el item
+    def get_item_updated(self):
+        return self.name, self.sell_in, self.quality
+
+    # Funcion donde definimos las condiciones que debe cumplir
 
     def update_item(self):
-        pass
+        if self.quality <= 0:
+            self.quality = 0
+        else:
+            Normal_item.update_quality(self)
+            assert self.quality != 0
+        Normal_item.update_sell_in(self)
