@@ -35,6 +35,9 @@ class Normal_item():
     def update_item(self):
         if self.quality <= 0:
             self.quality = 0
+        elif self.sell_in <= 0:
+            self.quality_speed = -2
+            Normal_item.update_quality(self)
         else:
             Normal_item.update_quality(self)
             assert self.quality != 0

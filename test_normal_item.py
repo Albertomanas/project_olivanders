@@ -17,3 +17,9 @@ def test_quality_not_negative_normal_item():
     pato = Normal_item("pato", 2, 0)
     pato.update_item()
     assert pato.get_item_updated() == ("pato", 1, 0)
+
+
+def test_sell_in_less_zero_item():
+    pato = Normal_item("pato", 0, 2)
+    pato.update_item()
+    assert pato.get_item_updated() == ("pato", -1, 0)
