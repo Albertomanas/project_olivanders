@@ -9,7 +9,7 @@ class Normal_item():
         self.sell_in_speed = -1
 
     def __repr__(self):
-        return "name:%s, sell_in:%s, quality:%s" % (self.name, self.sell_in, self.quality)
+        return "name: %s, sell_in: %s, quality: %s" % (self.name, self.sell_in, self.quality)
 
     # Propiedades básicas de quality y sell_in
 
@@ -32,18 +32,20 @@ class Normal_item():
 
     # Funcion donde definimos las condiciones que debe cumplir
 
-    def update_item(self):
+    def check_quality_limits(self):
         if self.quality <= 0:
             self.quality = 0
         elif self.quality > 50:
             self.quality = 50
-        elif self.sell_in <= 0:
+
+    def update_quality_speed(self):
+        if self.sell_in <= 0:
             self.quality_speed = -2
-            Normal_item.update_quality(self)
-            # No se si sera necesario, pero reiniciamos el
-            # valor de la speed al inicial
-            self.quality_speed = -1
         else:
-            Normal_item.update_quality(self)
-            assert self.quality != 0
+            self.quality_speed = -1
+
+    def update_item(self):
+        Normal_item.update_quality_speed(self)
         Normal_item.update_sell_in(self)
+        Normal_item.update_quality(self)
+        Normal_item.check_quality_limits(self)
