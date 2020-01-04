@@ -13,12 +13,13 @@ class Backstage_pass(Normal_item):
     # Funcion donde definimos las condiciones que debe cumplir backstage
 
     def update_quality_speed(self):
-        if self.sell_in < 0:
+        if self.sell_in <= 0:
             self.quality = 0
+            self.quality_speed = 0
         elif self.sell_in <= 5:
             self.quality_speed = 5
         elif self.sell_in <= 10:
-            self.quality = 2
+            self.quality_speed = 2
         else:
             self.quality_speed = 1
 
@@ -26,3 +27,4 @@ class Backstage_pass(Normal_item):
         Backstage_pass.update_quality_speed(self)
         Normal_item.update_quality(self)
         Normal_item.update_sell_in(self)
+        Normal_item.check_quality_limits(self)
