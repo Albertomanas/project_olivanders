@@ -23,13 +23,10 @@ class Normal_item():
     def get_quality(self):
         return self.quality
 
+    def get_sell_in(self):
+        return self.sell_in
+
     # def general para cambiar todo el item
 
-
-if __name__ == "__main__":
-    p = Normal_item("pato", 2, 2)
-    q = Normal_item("kaka")
-    print(p,q)
-    p.update_quality()
-    print(p)
-    assert p.get_quality() == 1
+    def update_item(self):
+        pass
