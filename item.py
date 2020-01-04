@@ -6,4 +6,4 @@ class Item:
 # Coje de una string name, sellIn y quality
 
     def __repr__(self):
-        return "%s, %s, %s" % (self.name, self.sell_In, self.quality)
+        return "name:%s, sell_in:%s, quality:%s" % (self.name, self.sell_In, self.quality)
