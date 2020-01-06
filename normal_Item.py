@@ -1,6 +1,7 @@
 from item import Item
 from updatable import updatable
 
+
 class Normal_item(Item, updatable):
 
     def __init__(self, name, sell_in, quality):
