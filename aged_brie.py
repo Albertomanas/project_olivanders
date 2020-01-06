@@ -2,8 +2,8 @@ from normal_Item import Normal_item
 
 
 class Aged_brie(Normal_item):
-    def __init__(self, name, sell_In, quality):
-        Normal_item.__init__(self, name, sell_In, quality)
+    def __init__(self, name, sell_in, quality):
+        Normal_item.__init__(self, name, sell_in, quality)
         # Por regla general, la quality_speed de Agred_brie será 1.
         self.quality_speed = 1
 
