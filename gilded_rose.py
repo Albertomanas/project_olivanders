@@ -1,7 +1,7 @@
 from item import Item
 
 
-class gilded_rose(item):
+class gilded_rose(object):
     def __init__(self, items):
         self.items = items
 
