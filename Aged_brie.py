@@ -1,4 +1,4 @@
-from normal_Item import Normal_item
+from Normal_Item import Normal_item
 
 
 class Aged_brie(Normal_item):

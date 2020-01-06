@@ -1,4 +1,4 @@
-from conjured import Conjured
+from Conjured import Conjured
 
 
 def test_quality_not_negative_Conjured():

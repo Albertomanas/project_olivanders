@@ -1,4 +1,4 @@
-from aged_brie import Aged_brie
+from Aged_brie import Aged_brie
 
 
 def test_quality_major_zero():
