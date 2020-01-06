@@ -1,4 +1,4 @@
 class updatable:
-    @abstractmethod  # método abstracto, define la clase.
-    def update_quality():
+    
+    def update_quality(self):
         pass
