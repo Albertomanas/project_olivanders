@@ -1,9 +1,11 @@
-class Normal_item():
+from item import Item
+from updatable import updatable
+
+
+class Normal_item(Item, updatable):
 
     def __init__(self, name, sell_in, quality):
-        self.name = name
-        self.sell_in = sell_in
-        self.quality = quality
+        Item.__init__(self, name, sell_in, quality)
         # Velocidad a la cual cambian las propiedades de Normal_item en un dia
         self.quality_speed = -1
         self.sell_in_speed = -1
