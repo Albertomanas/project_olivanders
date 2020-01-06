@@ -14,7 +14,6 @@ def test_sell_in_less_zero_item():
 
 # Casos test random para testear codigo
 
-
 def test_random_uno():
     pato = Conjured("pato", -2, 30)
     pato.update_item()
