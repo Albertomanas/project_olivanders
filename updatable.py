@@ -1,4 +1,4 @@
 class updatable:
     
-    def update_quality(self):
+    def update_item(self):
         pass
