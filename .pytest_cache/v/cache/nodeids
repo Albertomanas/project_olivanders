@@ -16,6 +16,8 @@
   "test_Conjured.py::test_random_dos",
   "test_Conjured.py::test_random_tres",
   "test_Conjured.py::test_quality_not_more_fifty",
+  "test_Gilded_rose.py::test_guilded_rose_brie_normal",
+  "test_Gilded_rose.py::test_all_guilded_rose",
   "test_Normal_item.py::test_update_quality_normal_item",
   "test_Normal_item.py::test_update_sell_in_normal_item",
   "test_Normal_item.py::test_quality_not_negative_normal_item",
