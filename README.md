@@ -1,3 +1,4 @@
-# project_olivanders
-Proyecto transversal 2
-Rama de preproducción
+# Pryecto transversal 2
+## Autores: Mateu Massó y Alberto J. Mañas
+
+
