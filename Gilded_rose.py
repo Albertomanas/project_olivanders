@@ -20,28 +20,16 @@ class Gilded_rose(object):
     def get_items(self):
         return self.items
 
+    def __eq__(self, items_updated):
+        return self.__dict__ == items_updated.__dict__
 
-if __name__ == "__main__":
-    items = Gilded_rose([
-            Conjured("+5 Dexterity Vest", 10, 20),
-            Aged_brie("Aged Brie", 2, 0),
-            Normal_item("Elixir of the Mongoose", 5, 7),
-            Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
-            Sulfuras_hand("Sulfuras, Hand of Ragnaros", -1, 80),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-            Conjured("Conjured Mana Cake", 3, 6)])
-    items.update_items()
-    items_updated = Gilded_rose([
-            Conjured("+5 Dexterity Vest", 9, 18),
-            Aged_brie("Aged Brie", 1, 1),
-            Normal_item("Elixir of the Mongoose", 4, 6),
-            Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
-            Sulfuras_hand("Sulfuras, Hand of Ragnaros", -1, 80),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 14, 21),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 9, 50),
-            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 4, 50),
-            Conjured("Conjured Mana Cake", 2, 4)])
-    print(items.get_items())
-    print(items_updated.get_items())
+    def equals(self, update_items):
+        i = 0
+        while(i < len(update_items.get_items())):
+            if str(update_items.get_items()[i]) == str(self.get_items()[i]):
+                pass
+            else:
+                return False
+            i += 1
+        return True
+    # preguntar a david
