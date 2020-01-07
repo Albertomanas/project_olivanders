@@ -42,6 +42,7 @@ def test_all_guilded_rose():
             Conjured("Conjured Mana Cake", 2, 4)])
     assert items.equals(items_updated)
 
+
 '''
 -------- day 0 --------
 name, sellIn, quality
