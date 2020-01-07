@@ -7,14 +7,12 @@ class Aged_brie(Normal_item):
         # Por regla general, la quality_speed de Agred_brie será 1.
         self.quality_speed = 1
 
+    # Aged brie, es un item que aumenta su calidad a medida que pasa el tiempo.
+    # Cuando su fecha de sell_in sea menor que 0 su calidad aumentara
+    # el doble de rápido
+
     def update_quality_speed(self):
         if self.sell_in <= 0:
             self.quality_speed = 2
         else:
             self.quality_speed = 1
-
-    def update_item(self):
-        Aged_brie.update_quality_speed(self)
-        Normal_item.update_quality(self)
-        Normal_item.update_sell_in(self)
-        Normal_item.check_quality_limits(self)

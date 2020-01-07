@@ -1,10 +1,41 @@
 from Gilded_rose import Gilded_rose
+from Item import Item
+from Normal_item import Normal_item
+from Aged_brie import Aged_brie
+from Backstage_pass import Backstage_pass
+from Conjured import Conjured
+from Sulfuras_hand import Sulfuras_hand
 
 
-def test_quality_not_negative_normal_item():
-    pato = Gilded_rose(("pato", 2, 0))
+def test_guilded_rose_brie_normal():
+    pato = Gilded_rose([Normal_item("polonia", 2, 0), Aged_brie("queso", 1, 0)])
     pato.update_items()
-    assert pato.get_items_updated() == (("pato", 1, 0))
+    assert pato.get_items() == Gilded_rose([Normal_item("polonia", 1, 0), Aged_brie("queso", 0, 1)])
+
+
+def test_all_guilded_rose():
+    items = Gilded_rose([
+            Conjured("+5 Dexterity Vest", 10, 20),
+            Aged_brie("Aged Brie", 2, 0),
+            Normal_item("Elixir of the Mongoose", 5, 7),
+            Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
+            Sulfuras_hand("Sulfuras, Hand of Ragnaros", -1, 80),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+            Conjured("Conjured Mana Cake", 3, 6)])
+    items.update_items()
+    items_updated = Gilded_rose([
+            Conjured("+5 Dexterity Vest", 9, 18),
+            Aged_brie("Aged Brie", 1, 1),
+            Normal_item("Elixir of the Mongoose", 4, 6),
+            Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
+            Sulfuras_hand("Sulfuras, Hand of Ragnaros", -1, 80),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 14, 21),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 9, 50),
+            Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 4, 50),
+            Conjured("Conjured Mana Cake", 2, 4)])
+    assert items.get_items() == items_updated.get_items()
 
 '''
 -------- day 0 --------

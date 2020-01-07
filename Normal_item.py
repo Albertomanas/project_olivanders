@@ -10,9 +10,6 @@ class Normal_item(Item, updatable):
         self.quality_speed = -1
         self.sell_in_speed = -1
 
-    def __repr__(self):
-        return "name: %s, sell_in: %s, quality: %s" % (self.name, self.sell_in, self.quality)
-
     # Propiedades básicas de quality y sell_in
 
     def update_quality(self):
@@ -46,8 +43,15 @@ class Normal_item(Item, updatable):
         else:
             self.quality_speed = -1
 
+    # Las funciones de update item, deben seguir
+    # el siguiente orden para su correcto funcionamiento
+
     def update_item(self):
-        Normal_item.update_quality_speed(self)
-        Normal_item.update_sell_in(self)
-        Normal_item.update_quality(self)
-        Normal_item.check_quality_limits(self)
+        # actualizamos la velocidad de variación de quality depende de sell_in
+        # siempre debera ir primera
+        self.update_quality_speed()
+        # no importan el orden de update_sell_in, ni de update_quality
+        self.update_sell_in()
+        self.update_quality()
+        # check quality limits siempre debera ir el ultimo de todos
+        self.check_quality_limits()

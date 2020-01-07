@@ -1,5 +1,7 @@
 from Normal_item import Normal_item
 
+# El backstage pass son pases para un concierto
+
 
 class Backstage_pass(Normal_item):
     def __init__(self, name, sell_in, quality):
@@ -7,10 +9,10 @@ class Backstage_pass(Normal_item):
         # Velocidad estandard de backstage, gana calidad
         self.quality_speed = 1
 
-    def __repr__(self):
-        return "name:%s, sell_in:%s, quality:%s" % (self.name, self.sell_in, self.quality)
-
-    # Funcion donde definimos las condiciones que debe cumplir backstage
+    # Las condiciones que debe cumplir backstage son las siguientes:
+    # La calidad del pase aumentara siempre hasta llegar el dia del concierto,
+    # que cuando pase, sera 0. Cuando queden menos de 10 dias, aumentara 2, 
+    # cuando queden menos de 5, aumentara 5
 
     def update_quality_speed(self):
         if self.sell_in <= 0:
@@ -22,9 +24,3 @@ class Backstage_pass(Normal_item):
             self.quality_speed = 2
         else:
             self.quality_speed = 1
-
-    def update_item(self):
-        Backstage_pass.update_quality_speed(self)
-        Normal_item.update_quality(self)
-        Normal_item.update_sell_in(self)
-        Normal_item.check_quality_limits(self)
