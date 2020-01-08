@@ -22,19 +22,8 @@ class Gilded_rose(object):
     def get_items(self):
         return self.items
 
-    def __eq__(self, items_updated):
-        return self.__dict__ == items_updated.__dict__
-
-    def equals(self, update_items):
-        i = 0
-        while(i < len(update_items.get_items())):
-            if str(update_items.get_items()[i]) == str(self.get_items()[i]):
-                pass
-            else:
-                return False
-            i += 1
-        return True
-    # preguntar a david
+    def __repr__(self):
+        return "%s" % (self.items)
 
 
 if __name__ == "__main__":

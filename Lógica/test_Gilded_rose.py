@@ -10,12 +10,12 @@ from Sulfuras_hand import Sulfuras_hand
 def test_guilded_rose_brie_normal():
     pato = Gilded_rose([
         Normal_item("polonia", 2, 0),
-        Aged_brie("queso", 1, 0)])
+        Aged_brie("queso", 1, 0)], 1)
     pato.update_items()
     items_updated = Gilded_rose([
         Normal_item("polonia", 1, 0),
-        Aged_brie("queso", 0, 1)])
-    assert pato.equals(items_updated)
+        Aged_brie("queso", 0, 1)], 0)
+    assert repr(pato) == repr(items_updated)
 
 
 def test_all_guilded_rose():
@@ -28,7 +28,7 @@ def test_all_guilded_rose():
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-            Conjured("Conjured Mana Cake", 3, 6)])
+            Conjured("Conjured Mana Cake", 3, 6)], 1)
     items.update_items()
     items_updated = Gilded_rose([
             Conjured("+5 Dexterity Vest", 9, 18),
@@ -39,8 +39,8 @@ def test_all_guilded_rose():
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 14, 21),
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 9, 50),
             Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 4, 50),
-            Conjured("Conjured Mana Cake", 2, 4)])
-    assert items.equals(items_updated)
+            Conjured("Conjured Mana Cake", 2, 4)], 0)
+    assert repr(items) == repr(items_updated)
 
 
 '''
