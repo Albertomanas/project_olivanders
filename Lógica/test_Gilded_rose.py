@@ -31,7 +31,7 @@ def test_all_guilded_rose():
             Conjured("Conjured Mana Cake", 3, 6)], 1)
     items.update_items()
     items_updated = Gilded_rose([
-            Conjured("+5 Dexterity Vest", 9, 19),
+            Normal_item("+5 Dexterity Vest", 9, 19),
             Aged_brie("Aged Brie", 1, 1),
             Normal_item("Elixir of the Mongoose", 4, 6),
             Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
