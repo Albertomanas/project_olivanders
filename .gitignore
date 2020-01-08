@@ -1,0 +1,5 @@
+.pytest_cache
+.vscode
+app/__pycache__
+gilded_rose
+
