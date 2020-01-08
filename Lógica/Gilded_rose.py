@@ -1,9 +1,9 @@
-from Item import Item
-from Normal_item import Normal_item
-from Aged_brie import Aged_brie
-from Backstage_pass import Backstage_pass
-from Conjured import Conjured
-from Sulfuras_hand import Sulfuras_hand
+from Lógica.Item import Item
+from Lógica.Normal_item import Normal_item
+from Lógica.Aged_brie import Aged_brie
+from Lógica.Backstage_pass import Backstage_pass
+from Lógica.Conjured import Conjured
+from Lógica.Sulfuras_hand import Sulfuras_hand
 
 # barricada para pasar solo los datos necesarios
 
@@ -25,17 +25,6 @@ class Gilded_rose(object):
     def __repr__(self):
         return "%s" % (self.items)
 
-
-if __name__ == "__main__":
-    items = Gilded_rose([
-        Conjured("+5 Dexterity Vest", 10, 20),
-        Aged_brie("Aged Brie", 2, 0),
-        Normal_item("Elixir of the Mongoose", 5, 7),
-        Sulfuras_hand("Sulfuras, Hand of Ragnaros", 0, 80),
-        Sulfuras_hand("Sulfuras, Hand of Ragnaros", -1, 80),
-        Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-        Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-        Backstage_pass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-        Conjured("Conjured Mana Cake", 3, 6)], 30)
-    items.update_items()
-    print(items.get_items())
+    def main(self):
+        self.update_items()
+        self.get_items()

@@ -1,4 +1,4 @@
-from Normal_item import Normal_item
+from Lógica.Normal_item import Normal_item
 
 # El backstage pass son pases para un concierto
 

@@ -1,5 +1,5 @@
-from Item import Item
-from updatable import updatable
+from Lógica.Item import Item
+from Lógica.updatable import updatable
 
 
 class Normal_item(Item, updatable):
