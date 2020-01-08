@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Prueba Flask</title>
+    <title>Gilded Rose</title>
 </head>
 <body>
-    {% if user %}
-    <h1>Bienvenido {{user}}</h1>
+    Mis Items, Mis Tesoros
+    {% if items %}
+    <h1>{{items}}</h1>
     {% endif %}
+    {% if dias %}
+    <h1>{{dias}}</h1>
+    {% dias %}
 </body>
 </html>
