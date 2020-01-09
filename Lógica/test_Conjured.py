@@ -1,4 +1,4 @@
-from Conjured import Conjured
+from Lógica.Conjured import Conjured
 
 
 def test_quality_not_negative_Conjured():

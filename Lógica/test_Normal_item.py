@@ -1,4 +1,4 @@
-from Normal_item import Normal_item
+from Lógica.Normal_item import Normal_item
 
 
 def test_update_quality_normal_item():
