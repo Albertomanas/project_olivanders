@@ -6,17 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gilded Rose</title>
 </head>
-<body>
-    <h1>Mis Items, Mis Tesoros</h1>
-    
-    {% if items %}
-    {{items}}
-    {% endif %}
-
-    <p>Dia número:</p>
-
-    {% if dias %}
-    {{dias}}
-    {% endif %}
-</body>
+	<body>
+        {% extends "bootstrap/base.html" %}
+        {% block title %}Olivanders{% endblock %}
+        {% block navbar %}
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index/0">Olivanders</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/index/1">Dia 1</a></li>
+                        <li><a href="/index/2">Dia 2</a></li>
+                        <li><a href="/index/3">Dia 3</a></li>
+                        <li><a href="/index/4">Dia 4</a></li>
+                        <li><a href="/index/5">Dia 5</a></li>
+                        <li><a href="/index/6">Dia 6</a></li>
+                        <li><a href="/index/7">Dia 7</a></li>
+                        <li><a href="/index/8">Dia 8</a></li>
+                        <li><a href="/index/9">Dia 9</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       {% endblock %}
+       {% block content %}
+       <div class="container">
+        <div class="page-header">
+        <h1>Inventory from day    
+            {% if dias %}
+            {{dias}}
+            {% endif %}</h1>
+        </div>
+        <div class="page-header">
+            <h3>{% if items %}
+            {{items}}
+            {% endif %}</h3>
+        </div>
+       </div>
+       {% endblock %}
+       </body>
 </html>

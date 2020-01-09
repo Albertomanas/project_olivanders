@@ -3,7 +3,9 @@ from app import app
 from flask import render_template
 from Lógica.Gilded_rose import Gilded_rose
 from app.database import Inventory
+from flask_bootstrap import Bootstrap
 
+bootstrap = Bootstrap(app)
 
 @app.route('/')
 @app.route('/index/<numero_de_dias>')
