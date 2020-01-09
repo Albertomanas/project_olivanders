@@ -7,12 +7,16 @@
     <title>Gilded Rose</title>
 </head>
 <body>
-    Mis Items, Mis Tesoros
+    <h1>Mis Items, Mis Tesoros</h1>
+    
     {% if items %}
-    <h1>{{items}}</h1>
+    {{items}}
     {% endif %}
+
+    <p>Dia número:</p>
+
     {% if dias %}
-    <h1>{{dias}}</h1>
-    {% dias %}
+    {{dias}}
+    {% endif %}
 </body>
 </html>

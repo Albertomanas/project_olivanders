@@ -1,10 +1,10 @@
-from Gilded_rose import Gilded_rose
-from Item import Item
-from Normal_item import Normal_item
-from Aged_brie import Aged_brie
-from Backstage_pass import Backstage_pass
-from Conjured import Conjured
-from Sulfuras_hand import Sulfuras_hand
+from Lógica.Gilded_rose import Gilded_rose
+from Lógica.Item import Item
+from Lógica.Normal_item import Normal_item
+from Lógica.Aged_brie import Aged_brie
+from Lógica.Backstage_pass import Backstage_pass
+from Lógica.Conjured import Conjured
+from Lógica.Sulfuras_hand import Sulfuras_hand
 
 
 def test_guilded_rose_brie_normal():

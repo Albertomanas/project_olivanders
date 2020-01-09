@@ -1,4 +1,4 @@
-from Sulfuras_hand import Sulfuras_hand
+from Lógica.Sulfuras_hand import Sulfuras_hand
 
 
 def test_update_item_sulfuras():
